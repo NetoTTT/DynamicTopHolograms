@@ -1,0 +1,46 @@
+# Configuração de banco de dados para DynamicTopHolograms
+# Aqui você pode configurar conectores para diferentes bancos de dados
+# Método antigo defasado, não recomendado
+
+database:
+  # Configuração para SQL genérico (MySQL, SQLite, etc.)
+  generic-sql:
+    # Exemplo de conector SQLite
+    example-sqlite:
+      enabled: false
+      type: sqlite
+      sqlite:
+        path: plugins/DynamicTopHolograms/database.db
+      tables:
+        players:
+          player-id-column: uuid
+          player-name-column: name
+          fields:
+            money:
+              column: money
+              display-name: Dinheiro
+            kills:
+              column: kills
+              display-name: Abates
+    
+    # Exemplo de conector MySQL
+    example-mysql:
+      enabled: false
+      type: mysql
+      mysql:
+        host: localhost
+        port: 3306
+        database: minecraft
+        username: root
+        password: password
+      tables:
+        stats:
+          player-id-column: uuid
+          player-name-column: player_name
+          fields:
+            points:
+              column: points
+              display-name: Pontos
+            level:
+              column: level
+              display-name: Nível

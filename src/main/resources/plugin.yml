@@ -1,0 +1,46 @@
+name: DynamicTopHolograms
+version: 1.0.1
+main: org.DynamicTopHolograms.dynamicTopHolograms.DynamicTopHolograms
+api-version: 1.13
+depend: [PlaceholderAPI, DecentHolograms]
+authors: [Neto_TTT]
+description: Plugin para criar hologramas dinâmicos com rankings de jogadores baseados em PlaceholderAPI e DecentHolograms
+
+commands:
+  dth:
+    description: Comando principal do DynamicTopHolograms
+    usage: /dth help
+    aliases: [dynamictop]
+    permission: dynamictopholograms.use
+
+permissions:
+  dynamictopholograms.use:
+    description: Permite usar o comando base do plugin
+    default: op
+  dynamictopholograms.create:
+    description: Permite criar hologramas de ranking
+    default: op
+  dynamictopholograms.set:
+    description: Permite configurar hologramas de ranking
+    default: op
+  dynamictopholograms.title:
+    description: Permite alterar o título de hologramas de ranking
+    default: op
+  dynamictopholograms.order:
+    description: Permite alterar a ordem de classificação dos hologramas
+    default: op
+  dynamictopholograms.remove:
+    description: Permite remover hologramas de ranking
+    default: op
+  dynamictopholograms.list:
+    description: Permite listar hologramas de ranking
+    default: op
+  dynamictopholograms.reload:
+    description: Permite recarregar a configuração do plugin
+    default: op
+  dynamictopholograms.refresh:
+    description: Permite atualizar manualmente os hologramas
+    default: op
+  dynamictopholograms.admin:
+    description: Allows access to all DynamicTopHolograms admin commands
+    default: op

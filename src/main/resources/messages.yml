@@ -1,0 +1,92 @@
+# DynamicTopHolograms - Mensagens
+# Use códigos de cores com &
+# Variáveis disponíveis:
+# {id} - ID do holograma
+# {placeholder} - Placeholder usado
+# {topN} - Número de jogadores no ranking
+# {title} - Título do holograma
+# Modelo padrão, Use para fazer suas traduções
+
+# Mensagens gerais
+prefix: "&8[&bDTH&8] &r"
+no-permission: "&cVocê não tem permissão para usar este comando."
+player-only: "&cEste comando só pode ser executado por um jogador."
+reload-success: "&aConfigurações recarregadas com sucesso!"
+
+# Comandos
+help-title: "&b=== DynamicTopHolograms - Comandos ==="
+help-create: "&e/dth create <id> <título> &7- Cria um novo holograma"
+help-set: "&e/dth set <id> <placeholder> <topN> [formato] &7- Configura um holograma"
+help-title-cmd: "&e/dth title <id> <título> &7- Altera o título do holograma"
+help-remove: "&e/dth remove <id> &7- Remove um holograma"
+help-list: "&e/dth list &7- Lista hologramas configurados"
+help-reload: "&e/dth reload &7- Recarrega a configuração"
+help-refresh: "&e/dth refresh [id] &7- Atualiza hologramas"
+help-order: "&e/dth order <id> <asc|desc> &7- Define a ordem do ranking"
+
+# Criação de hologramas
+create-usage: "&cUso: /dth create <id> <título>"
+create-success: "&aHolograma &6'{id}' &acriado com sucesso! Use /dth set para configurá-lo."
+create-exists: "&cJá existe um holograma com o ID &6'{id}'."
+
+# Configuração de hologramas
+set-usage: "&cUso: /dth set <id> <placeholder> <topN> [formato]"
+set-success: "&aHolograma &6'{id}' &aconfigurado para mostrar o top {topN} jogadores usando {placeholder}"
+set-not-found: "&cHolograma &6'{id}' &cnão encontrado."
+set-invalid-number: "&cO número de jogadores deve ser um número inteiro positivo."
+
+# Título de hologramas
+title-usage: "&cUso: /dth title <id> <título>"
+title-success: "&aTítulo do holograma &6'{id}' &aalterado para: {title}"
+title-not-found: "&cHolograma &6'{id}' &cnão encontrado."
+
+# Ordem de hologramas
+order-usage: "&cUso: /dth order <id> <asc|desc>"
+order-success: "&aOrdem do holograma &6'{id}' &aalterada para: {order}"
+order-not-found: "&cHolograma &6'{id}' &cnão encontrado."
+order-asc: "crescente (menor para maior)"
+order-desc: "decrescente (maior para menor)"
+
+# Remoção de hologramas
+remove-usage: "&cUso: /dth remove <id>"
+remove-success: "&aHolograma &6'{id}' &aremovido com sucesso!"
+remove-not-found: "&cHolograma &6'{id}' &cnão encontrado."
+
+# Listagem de hologramas
+list-title: "&b=== Hologramas de Ranking Configurados ==="
+list-entry: "&e- {id} &7({placeholder}, Top {topN})"
+list-empty: "&7Não há hologramas de ranking configurados."
+
+# Atualização de hologramas
+refresh-all: "&aAtualizando todos os hologramas..."
+refresh-specific: "&aAtualizando holograma '{id}'..."
+refresh-not-found: "&cHolograma &6'{id}' &cnão encontrado."
+
+# Teleporte de hologramas
+movehere-usage: "&cUso: /dth movehere <id>"
+move-usage: "&cUso: /dth move <id> <x> <y> <z> [mundo]"
+move-not-found: "&cHolograma &6'{id}' &cnão encontrado."
+move-success: "&aHolograma &6&6'{id}' &a&amovido para sua localização."
+move-success-coords: "&aHolograma &6'{id}' &amovido para {x}, {y}, {z} no mundo {world}."
+move-failed: "&cFalha ao mover o holograma &6'{id}'."
+move-invalid-coords: "&cCoordenadas inválidas. Use números para x, y e z."
+move-invalid-world: "&cMundo '{world}' não encontrado."
+help-movehere: "&e/dth movehere <id> &7- Move um holograma para sua localização"
+help-move: "&e/dth move <id> <x> <y> <z> [mundo] &7- Move um holograma para coordenadas específicas"
+
+# Mensagens para comandos de banco de dados
+dbset-usage: "&cUso: /dth dbset <id> <conector> <campo> <top> [formato]"
+dbset-not-found: "&cHolograma '{id}' não encontrado."
+dbset-connector-not-available: "&cConector '{connector}' não disponível."
+dbset-field-not-available: "&cCampo '{field}' não disponível no conector '{connector}'."
+dbset-invalid-number: "&cO número de jogadores deve ser um número positivo."
+dbset-success: "&aHolograma '{id}' configurado para usar {connector}:{field}, mostrando top {topN}."
+
+dblist-no-connectors: "&cNenhum conector de banco de dados disponível."
+dblist-title: "&6Conectores de banco de dados disponíveis:"
+dblist-connector: "&e- {connector}"
+dblist-no-fields: "&7  Nenhum campo disponível"
+dblist-field: "&7  • {field}"
+
+help-dbset: "&e/dth dbset <id> <conector> <campo> <top> [formato] &7- Configura um holograma para usar banco de dados"
+help-dblist: "&e/dth dblist &7- Lista conectores e campos de banco de dados disponíveis"

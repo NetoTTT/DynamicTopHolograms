@@ -1,0 +1,105 @@
+# DynamicTopHolograms - English Messages
+# Use color codes with &
+# Available variables:
+# {id} - Hologram ID
+# {placeholder} - Used placeholder
+# {topN} - Number of players in ranking
+# {title} - Hologram title
+# {connector} - Database connector name
+# {field} - Database field
+
+# General messages
+prefix: "&8[&bDTH&8] &r"
+no-permission: "&cYou don't have permission to use this command."
+player-only: "&cThis command can only be executed by a player."
+reload-success: "&aSettings reloaded successfully!"
+
+# Commands
+help-title: "&b=== DynamicTopHolograms - Commands ==="
+help-create: "&e/dth create <id> <title> &7- Creates a new hologram"
+help-set: "&e/dth set <id> <placeholder> <topN> [format] &7- Configures a hologram"
+help-title-cmd: "&e/dth title <id> <title> &7- Changes the hologram title"
+help-remove: "&e/dth remove <id> &7- Removes a hologram"
+help-list: "&e/dth list &7- Lists configured holograms"
+help-reload: "&e/dth reload &7- Reloads the configuration"
+help-refresh: "&e/dth refresh [id] &7- Updates holograms"
+help-order: "&e/dth order <id> <asc|desc> &7- Sets the ranking order"
+help-movehere: "&e/dth movehere <id> &7- Moves a hologram to your location"
+help-move: "&e/dth move <id> <x> <y> <z> [world] &7- Moves a hologram to specific coordinates"
+help-dbset: "&e/dth dbset <id> <connector> <table.field> <topN> [format] &7- Configures a hologram to use database"
+help-dblist: "&e/dth dblist &7- Lists available database connectors and fields"
+
+# Hologram creation
+create-usage: "&cUsage: /dth create <id> <title>"
+create-success: "&aHologram &6'{id}' &acreated successfully! Use /dth set to configure it."
+create-exists: "&cA hologram with ID &6'{id}' &calready exists."
+
+# Hologram configuration
+set-usage: "&cUsage: /dth set <id> <placeholder> <topN> [format]"
+set-success: "&aHologram &6'{id}' &aconfigured to show top {topN} players using {placeholder}"
+set-not-found: "&cHologram &6'{id}' &cnot found."
+set-invalid-number: "&cThe number of players must be a positive integer."
+
+# Hologram title
+title-usage: "&cUsage: /dth title <id> <title>"
+title-success: "&aHologram &6'{id}' &atitle changed to: {title}"
+title-not-found: "&cHologram &6'{id}' &cnot found."
+
+# Hologram order
+order-usage: "&cUsage: /dth order <id> <asc|desc>"
+order-success: "&aHologram &6'{id}' &aorder changed to: {order}"
+order-not-found: "&cHologram &6'{id}' &cnot found."
+order-asc: "ascending (lowest to highest)"
+order-desc: "descending (highest to lowest)"
+
+# Hologram removal
+remove-usage: "&cUsage: /dth remove <id>"
+remove-success: "&aHologram &6'{id}' &aremoved successfully!"
+remove-not-found: "&cHologram &6'{id}' &cnot found."
+
+# Hologram listing
+list-title: "&b=== Configured Ranking Holograms ==="
+list-entry: "&e- {id} &7({placeholder}, Top {topN})"
+list-empty: "&7No ranking holograms configured."
+
+# Hologram update
+refresh-all: "&aUpdating all holograms..."
+refresh-specific: "&aUpdating hologram '{id}'..."
+refresh-not-found: "&cHologram &6'{id}' &cnot found."
+
+# Hologram teleport
+movehere-usage: "&cUsage: /dth movehere <id>"
+move-usage: "&cUsage: /dth move <id> <x> <y> <z> [world]"
+move-not-found: "&cHologram &6'{id}' &cnot found."
+move-success: "&aHologram &6'{id}' &amoved to your location."
+move-success-coords: "&aHologram &6'{id}' &amoved to {x}, {y}, {z} in world {world}."
+move-failed: "&cFailed to move hologram &6'{id}'."
+move-invalid-coords: "&cInvalid coordinates. Use numbers for x, y, and z."
+move-invalid-world: "&cWorld '{world}' not found."
+
+# Database command messages
+dbset-usage: "&cUsage: /dth dbset <id> <connector> <table.field> <topN> [format]"
+dbset-not-found: "&cHologram '{id}' not found."
+dbset-connector-not-available: "&cConnector '{connector}' not available."
+dbset-field-not-available: "&cField '{field}' not available in connector '{connector}'."
+dbset-invalid-number: "&cThe number of players must be a positive number."
+dbset-success: "&aHologram '{id}' configured to use {connector}:{field}, showing top {topN}."
+dbset-invalid-field-format: "&cInvalid field format. Use the format 'table.field', for example: 'player_stats.kills'"
+
+dblist-no-connectors: "&cNo database connectors available."
+dblist-title: "&6Available database connectors:"
+dblist-connector: "&e- {connector}"
+dblist-no-fields: "&7  No fields available"
+dblist-field: "&7  • {field} &8({friendly_name})"
+
+# New messages for multiple connectors
+dblist-connector-title: "&6Connector: &e{connector}"
+dblist-table-title: "&7Table: &f{table}"
+dblist-field-entry: "&7  • &f{field} &8({friendly_name})"
+dblist-usage-example: "&7Usage example: &f/dth dbset top_kills {connector} {table}.{field} 10"
+
+# Language messages for the /dth language command
+language-usage: "&cUsage: /dth language <language>"
+language-not-supported: "&cLanguage '{language}' is not supported. Supported languages: {supported}"
+language-changed: "&aLanguage changed to: {language}"
+help-language: "&e/dth language <language> &7- Change the plugin language"

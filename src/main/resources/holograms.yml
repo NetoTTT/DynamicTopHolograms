@@ -1,0 +1,18 @@
+# DynamicTopHolograms - Configuração de Hologramas
+# Cada holograma é identificado por sua ID única
+# 
+# Formato:
+# ID_DO_HOLOGRAMA:
+#   placeholder: "%placeholder_api_aqui%"
+#   topN: 10
+#   title: "&6&lTop {placeholder_name}"
+#   format: "&e{rank}. &f{player} &7- &a{value}"
+#   ascending: false  # true = crescente (menor para maior), false = decrescente (maior para menor)
+
+# Exemplo (remova ou modifique conforme necessário):
+exemplo:
+  placeholder: "%player_level%"
+  topN: 10
+  title: "&6&lTop Níveis"
+  format: "&e{rank}. &f{player} &7- &aNível {value}"
+  ascending: false

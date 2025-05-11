@@ -1,0 +1,35 @@
+# DynamicTopHolograms - Configuração principal
+# Versão: 1.0.0
+
+# Intervalo de atualização dos hologramas (em minutos)
+update-interval-minutes: 5
+
+# Usar dados de jogadores offline
+enable-offline-data: true
+
+# Configuração de idioma
+# Idiomas disponíveis: en, pt_BR
+language: pt_BR
+
+# Referência para o arquivo de configuração de banco de dados
+# As configurações de banco de dados estão no arquivo database.yml
+# Tempo máximo para armazenar dados offline (em dias)
+# Jogadores que não entrarem por este período serão removidos do ranking
+offline-data-expiry-days: 30
+
+# Ativar modo de depuração para mostrar logs detalhados
+debug-mode: false
+
+# Configurações de armazenamento
+storage:
+  # Tipo de armazenamento: 'file' (arquivo) ou 'mysql' (banco de dados)
+  type: file
+  
+  # Configurações MySQL (apenas se type: mysql)
+  mysql:
+    host: localhost
+    port: 3306
+    database: minecraft
+    username: root
+    password: password
+    table-prefix: dth_

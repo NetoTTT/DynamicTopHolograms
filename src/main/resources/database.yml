@@ -1,0 +1,193 @@
+# DynamicTopHolograms - Configurações de Banco de Dados
+# Versão: 1.0.0
+
+# =====================================================
+# GUIA DE CONFIGURAÇÃO DO BANCO DE DADOS
+# =====================================================
+# Este arquivo configura como o plugin se conecta a bancos de dados
+# para obter informações para exibir nos hologramas de ranking.
+# 
+# ESTRUTURA BÁSICA:
+# database:
+#   generic-sql:
+#     [nome-do-conector]:
+#       enabled: true/false
+#       type: sqlite/mysql
+#       [configurações específicas do tipo]
+#       tables:
+#         [nome-da-tabela]:
+#           [configurações da tabela]
+#           fields:
+#             [campos disponíveis]
+# 
+# COMO USAR NOS HOLOGRAMAS:
+# Após configurar, você pode usar os campos no formato:
+# {top:[nome-do-conector]:[nome-da-tabela].[nome-do-campo]}
+# Exemplo: {top:exemple:player_stats.money}
+# =====================================================
+
+database:
+  # Configurações para conectores SQL (MySQL e SQLite)
+  generic-sql:
+    # Exemplo de conector - você pode criar quantos precisar com nomes diferentes
+    exemple-sqlite:
+      # Ativar ou desativar este conector
+      enabled: false
+      
+      # Tipo de banco de dados: "sqlite" ou "mysql"
+      type: sqlite
+      
+      # === Configurações para SQLite ===
+      sqlite:
+        # Caminho para o arquivo de banco de dados
+        # Tem que ser absoluto ao arquivo
+        path: "plugins/O-Plugin-Desejado/database.db"
+
+      # === Configurações de tabelas ===
+      # Cada tabela deve ter pelo menos:
+      # - player-id-column: coluna que armazena o UUID do jogador
+      # - player-name-column: coluna que armazena o nome do jogador
+      # - fields: campos que podem ser usados nos hologramas
+      tables:
+        # === Tabela de estatísticas de jogadores ===
+        player_stats:
+          # Coluna que contém o UUID do jogador
+          player-id-column: uuid
+          
+          # Coluna que contém o nome do jogador
+          player-name-column: player_name
+          
+          # Campos disponíveis nesta tabela
+          fields:
+            # Formato:
+            # nome-do-campo:
+            #   column: nome-da-coluna-no-banco
+            #   display-name: Nome exibido no holograma
+            
+            # Dinheiro do jogador
+            money:
+              column: balance            # Nome da coluna no banco de dados
+              display-name: Dinheiro     # Nome amigável para exibição
+            
+            # Abates do jogador
+            kills:
+              column: kills
+              display-name: Abates
+            
+            # Mortes do jogador
+            deaths:
+              column: deaths
+              display-name: Mortes
+            
+            # Razão de abates por morte
+            kdr:
+              column: kdr
+              display-name: K/D Ratio
+        
+        # === Tabela de facções ===
+        # Exemplo de outra tabela no mesmo banco de dados
+        factions:
+          # Coluna que contém o UUID do líder da facção
+          player-id-column: leader_uuid
+          
+          # Coluna que contém o nome do líder da facção
+          player-name-column: leader_name
+          
+          # Campos disponíveis para facções
+          fields:
+            # Poder da facção
+            power:
+              column: faction_power
+              display-name: Poder
+            
+            # Número de membros na facção
+            members:
+              column: member_count
+              display-name: Membros
+            
+            # Territórios reivindicados pela facção
+            land:
+              column: claimed_chunks
+              display-name: Territórios
+
+    exemple-mysql:
+      # Ativar ou desativar este conector
+      enabled: false
+      
+      # Tipo de banco de dados: "sqlite" ou "mysql"
+      type: mysql
+    
+      # === Configurações para MySQL ===
+      mysql:
+        host: localhost     # Endereço do servidor MySQL
+        port: 3306          # Porta do servidor MySQL
+        database: minecraft # Nome do banco de dados
+        username: root      # Nome de usuário
+        password: ""        # Senha (deixe vazio se não houver)
+      
+      # === Configurações de tabelas ===
+      # Cada tabela deve ter pelo menos:
+      # - player-id-column: coluna que armazena o UUID do jogador
+      # - player-name-column: coluna que armazena o nome do jogador
+      # - fields: campos que podem ser usados nos hologramas
+      tables:
+        # === Tabela de estatísticas de jogadores ===
+        player_stats:
+          # Coluna que contém o UUID do jogador
+          player-id-column: uuid
+          
+          # Coluna que contém o nome do jogador
+          player-name-column: player_name
+          
+          # Campos disponíveis nesta tabela
+          fields:
+            # Formato:
+            # nome-do-campo:
+            #   column: nome-da-coluna-no-banco
+            #   display-name: Nome exibido no holograma
+            
+            # Dinheiro do jogador
+            money:
+              column: balance            # Nome da coluna no banco de dados
+              display-name: Dinheiro     # Nome amigável para exibição
+            
+            # Abates do jogador
+            kills:
+              column: kills
+              display-name: Abates
+            
+            # Mortes do jogador
+            deaths:
+              column: deaths
+              display-name: Mortes
+            
+            # Razão de abates por morte
+            kdr:
+              column: kdr
+              display-name: K/D Ratio
+        
+        # === Tabela de facções ===
+        # Exemplo de outra tabela no mesmo banco de dados
+        factions:
+          # Coluna que contém o UUID do líder da facção
+          player-id-column: leader_uuid
+          
+          # Coluna que contém o nome do líder da facção
+          player-name-column: leader_name
+          
+          # Campos disponíveis para facções
+          fields:
+            # Poder da facção
+            power:
+              column: faction_power
+              display-name: Poder
+            
+            # Número de membros na facção
+            members:
+              column: member_count
+              display-name: Membros
+            
+            # Territórios reivindicados pela facção
+            land:
+              column: claimed_chunks
+              display-name: Territórios
