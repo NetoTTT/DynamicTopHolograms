@@ -1,7 +1,7 @@
 name: DynamicTopHolograms
-version: 1.0.1
+version: 1.0.2
 main: org.DynamicTopHolograms.dynamicTopHolograms.DynamicTopHolograms
-api-version: 1.13
+api-version: '1.21'
 depend: [PlaceholderAPI, DecentHolograms]
 authors: [Neto_TTT]
 description: Plugin para criar hologramas dinâmicos com rankings de jogadores baseados em PlaceholderAPI e DecentHolograms

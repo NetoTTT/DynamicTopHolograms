@@ -19,6 +19,7 @@
 
 - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (obrigatório)
 - [DecentHolograms](https://www.spigotmc.org/resources/decent-holograms-1-8-1-20-1.96927/) (obrigatório)
+- **Servidor Compatível**: Spigot, Paper ou forks na versão **1.21.1+** (Requer Java 21)
 
 ---
 
